@@ -14,10 +14,16 @@ public class Task6BraceBalance {
 
         for (int i = 0; i < sequence.length(); i++) {
             if (!stack.empty()) {
+                if (sequence.charAt(i) == '}' && (stack.peek() == ']' ||  stack.peek() == ')') ||
+                        sequence.charAt(i) == ']' && (stack.peek() == '}' ||  stack.peek() == ')') ||
+                        sequence.charAt(i) == ')' && (stack.peek() == ']' ||  stack.peek() == '}')) {
+                    return false;
+                }
                 if (sequence.charAt(i) == '}' && stack.peek() == '{' ||
                         sequence.charAt(i) == ']' && stack.peek() == '[' ||
-                        sequence.charAt(i) == ')' && stack.peek() == '(')
-                stack.pop();
+                        sequence.charAt(i) == ')' && stack.peek() == '(') {
+                    stack.pop();
+                }
             } else {
                 stack.push(sequence.charAt(i));
             }
