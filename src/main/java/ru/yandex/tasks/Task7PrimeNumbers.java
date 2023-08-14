@@ -16,7 +16,7 @@ public class Task7PrimeNumbers {
 
         for (int i = 2; i < Math.ceil(Math.sqrt(N + 1)); i++) {
             if (!checkArr[i]) {
-                int k = i + i;
+                int k = i * i;
                 while (k < N + 1) {
                     checkArr[k] = true;
                     k += i;
