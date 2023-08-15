@@ -4,6 +4,6 @@ import ru.yandex.tasks.*;
 
 public class Main {
     public static void main(String[] args) {
-        Task8BinarySearch.selfCheck();
+        Task9ReverseList.selfCheck();
     }
 }

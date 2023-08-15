@@ -8,7 +8,30 @@ public class Task9ReverseList {
          * Выход: новая голова списка
          */
         // (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ WRITE CODE HERE (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-        return null;
+        Node prevNode = null;
+        Node currNode = head;
+        Node nextNode = null;
+        if (currNode != null) {
+            if (currNode.next == null) {
+                return currNode;
+            } else {
+                nextNode = head.next;
+                currNode.next = null;
+            }
+        } else {
+            return null;
+        }
+
+
+        while (nextNode != null) {
+            prevNode = currNode;
+            currNode = nextNode;
+            nextNode = currNode.next;
+            currNode.next = prevNode;
+            prevNode = currNode;
+        }
+
+        return prevNode;
     }
 
     public static void selfCheck() {
